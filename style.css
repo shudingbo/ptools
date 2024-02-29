@@ -1,0 +1,21 @@
+body {
+    width: 400px; /* 设置弹出界面的宽度 */
+}
+
+.div-h {
+    margin: 6px;
+    border: 1px dashed #f00;
+    display: inline-block;
+}
+.input-tm {
+    width: 100px;
+}
+#resStr2Tm {
+    width: 100px;
+    border: 1px dashed #ccc;
+}
+
+#resTm2Str,#timeInput {
+    width: 140px;
+    border: 1px dashed #ccc;
+}

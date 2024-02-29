@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timestamp Converter</title>
+    <meta charset="UTF-8" />
+    <!-- <link rel="stylesheet" type="text/css" href="style.css">  -->
+    <style>
+        body {
+            width: 460px; /* 设置弹出界面的宽度 */
+            padding: 6px;
+        }
+
+        .div-h {
+            width: 100%;
+            margin: 6px;
+            border-bottom: 1px solid #f00;
+            display: flex;
+            padding-bottom: 6px;
+        }
+        .div-v {
+            width: 100%;
+            margin: 6px;
+            padding-bottom: 6px;
+        }
+        .input-tm {
+            width: 100px;
+            margin-left: 6px;
+        }
+
+        .input-date {
+            width: 140px;
+            margin-left: 6px;
+        }
+
+        #resStr2Tm {
+            border: 1px dashed #ccc;
+        }
+
+        .dateTitle { 
+            text-align: right;
+            width: 40px;
+            border: 0px dashed #ccc;
+            display: inline-block;
+            font-size: 12px
+        }
+
+        .dateValue {
+            margin-left: 2px;
+            border-bottom: 1px dashed #ccc;
+            color:blue;
+            font-weight: bold;
+        }
+
+        .divTitle { 
+            text-align: right;
+            font-size: 16px;
+            border: 0px dashed #ccc;
+            display: inline-block;
+            font-size: 12px
+        }
+
+        /* 隐藏所有的tab内容 */  
+        .tab-content {  
+            display: none;  
+        }  
+    
+        /* 选中tab时显示对应的内容 */  
+        .tab-content.active {  
+            display: block;
+            padding: 6px;
+            border: 1px dashed #ccc;
+            margin-top: 8px;
+            background-color: rgb(219, 217, 213);
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75); 
+        }
+
+        .tab.active {
+            background-color: rgb(118, 218, 176);
+        }
+
+        .icon {  
+            display: inline-block;  
+            width: 16px;  
+            height: 16px;  
+            background-size: cover;  
+        }
+
+        .icon:hover {  
+            cursor: pointer;
+            border: 2px solid #ccc;
+        }
+        
+        .icon-copy {  
+            background-image: url('images/copy.svg');  
+        }
+
+        .icon-down {  
+            background-image: url('images/download.svg');  
+        }
+
+        .icon-convert {  
+            background-image: url('images/arrow-in-circle.svg');  
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">  
+        <button class="tab active" idx="0">时间转换</button>  
+        <button class="tab" idx="1">GITHub下载</button>  
+      </div>  
+      
+      <div class="tab-content" id="tab1">  
+        <div class="div-h">
+            <div>
+                <span class="dateTitle" style="width: 40px;" >时间戳: </span>
+                <input class="input-tm" type="text" id="timestampInput" placeholder="Enter timestamp" />
+                <button id="convertBtn">转换</button> 
+            </div>
+            
+            <div>
+                <div>
+                    <span class="dateTitle">Local: </span>
+                    <span class="dateValue" id="localDateStr"></span>
+                    <div id="idCopyLocalDateStr" class="icon icon-copy"></div>
+                </div>
+                <div style="margin-top:6px">
+                    <span class="dateTitle">UTC: </span>
+                    <span class="dateValue" id="utcDateStr"></span>
+                    <div id="idCopyUtcDateStr" class="icon icon-copy"></div>
+                </div>
+            </div>       
+        </div>
+
+        <div class="div-h">
+            <div>
+                <span class="dateTitle" style="width: 40px;" >时间: </span>
+                <input class="input-date" type="text" id="timeInput" placeholder="Enter 时间" />
+                <button id="convertBtnStr2Tm">转换</button>            
+            </div>
+            <div>
+                <span class="dateValue" id="idOutTm"></span>
+                <div id="idCopyOutTm" class="icon icon-copy"></div>
+            </div>    
+        </div>
+      </div>  
+      <div class="tab-content" id="tab2">
+        <div class="div-v">
+            <div>
+                <span class="dateTitle" style="width: 60px;" >代理地址：</span>
+                <input type="text" style="width: 260px;" id="idInputGithubProxyAddr" placeholder="代理地址" />
+                <button id="idChangeGithub">更改</button> 
+            </div>
+            <div style="margin-top:6px">
+                <span class="dateTitle" style="width: 60px;" >下载地址：</span>
+                <input type="text" style="width: 260px;" id="idInputGithubAddr" placeholder="输入下载链接" />
+                <button id="idDownGithub">下载</button> 
+            </div>
+        </div> 
+      </div>  
+      <div class="tab-content" id="tab3">  
+        <p>Content for Tab 3</p>  
+      </div>
+
+
+
+
+
+    
+    <script src="utils.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
