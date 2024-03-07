@@ -124,3 +124,10 @@ eleTabs.forEach(function(tab) {
 }); 
 
 selectTab(0);
+
+
+
+document.getElementById('idLinkPref').addEventListener('click', function() {
+    openWebPage( "edge://inspect/#devices" );
+    
+});

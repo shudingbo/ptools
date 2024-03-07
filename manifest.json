@@ -3,7 +3,7 @@
     "name": "Utils Toolset",
     "version": "1.0",
     "description": "转换时间戳，github代理下载等小功能",
-    "permissions": ["activeTab","clipboardWrite","downloads","storage" ],
+    "permissions": ["tab","activeTab","clipboardWrite","downloads","storage" ],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {

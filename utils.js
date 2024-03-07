@@ -243,3 +243,23 @@ function setGithubProxy( proxyUrl) {
   localStorage.setItem('githubProxy', proxyUrl);
   alert('设置成功')
 }
+
+/**
+ * 打开web页面
+ * 
+ * @param {string} url 页面的 url
+ */
+function openWebPage(url) {
+  chrome.tabs.query({}, function(tabs) {
+      // 检查是否已经打开了目标网址的标签页
+      const existingTab = tabs.find(tab => tab.url === url);
+  
+      if (existingTab) {
+        // 如果已经打开了，激活该标签页
+        chrome.tabs.update(existingTab.id, { active: true });
+      } else {
+        // 如果没有打开，创建新的标签页
+        chrome.tabs.create({ url: url });
+      }
+    });
+}
